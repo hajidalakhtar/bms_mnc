@@ -19,11 +19,11 @@ function Content() {
     width={375}
     maxWidth="100%">
     <Center>
-    <HStack space={1} my="5" alignItems="center">
+    <HStack space={10} my="5" alignItems="center">
       
         <Item title="Indicator Panel"  img={faBolt} url="energy" color="primary.500"/>
-        <DisabledItem  title="Indicator AHU"  img={faThermometerEmpty} url="ahu" color="success.500"/>
-        {/* <Item  title="Indicator AHU"  img={faThermometerEmpty} url="ahu" color="success.500"/> */}
+        {/* <DisabledItem  title="Indicator AHU"  img={faThermometerEmpty} url="ahu" color="success.500"/> */}
+        <Item  title="Indicator AHU"  img={faThermometerEmpty} url="ahu" color="success.500"/>
 
         
       </HStack>
@@ -41,7 +41,7 @@ function Item(props) {
     return (
 <Box>
   <Link to={props.url} style={{textDecoration:"none"}}>
-        <Center h="40" w="40" mx="1" bg={props.color}  rounded="md" shadow={3} >
+        <Center h="40" w="40" bg={props.color}  rounded="md" shadow={3} >
             <FontAwesomeIcon icon={props.img} style={{fontSize:"80px",color:"white"}}/>
 
                 {/* <Image
@@ -66,7 +66,6 @@ function Item(props) {
 function DisabledItem(props) {
   return (
 <Box>
-<Link to={props.url} style={{textDecoration:"none"}}>
       <Center h="40" w="40" mx="1" bg={props.color+":alpha.30"} rounded="md" shadow={3} >
           <FontAwesomeIcon icon={props.img} style={{fontSize:"80px",color:"white"}}/>
 
@@ -77,10 +76,9 @@ function DisabledItem(props) {
               /> */}
       </Center>
       <Center flex={1} px="3">
-        <Text color="black"  mt="1"  bold style={{fontSize:"15px"}} >{props.title}</Text>
+        <Text color="black"  mt="1"  bold style={{fontSize:"15px"}} >Last Attend 12:00:14</Text>
       </Center>
 
-    </Link>
 </Box>
 
   );
