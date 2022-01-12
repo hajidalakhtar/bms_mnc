@@ -117,7 +117,6 @@ function OpenAlert() {
     let open = false;
     MySwal.fire({
       title: 'Uploading Data',
-      // html: 'I will close in <b></b> milliseconds.',
       didOpen: () => {
         MySwal.showLoading()
         postData()
