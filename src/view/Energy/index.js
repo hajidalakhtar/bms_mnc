@@ -136,7 +136,7 @@ function OpenAlert() {
       
       <FormControl isRequired>
         <Stack mx="4">
-      <Text fontSize="lg" fontWeight="bold">Ampere</Text>
+      <Text fontSize="2xl" fontWeight="bold">Ampere</Text>
 
           <FormControl.Label mt="2" >Ampere Low</FormControl.Label>
           <Input type="text" keyboardType="numeric" placeholder="Ampere Low"  id="ampere_low" onBlur={e => setAmpereLow(e.target.value)} />
@@ -155,7 +155,7 @@ function OpenAlert() {
 
       <FormControl isRequired>
         <Stack mx="4">
-          <Text fontSize="lg" fontWeight="bold">Voltage</Text>
+          <Text fontSize="2xl" fontWeight="bold">Voltage</Text>
 
           <FormControl.Label  mt="2" >Voltage Low</FormControl.Label>
           <Input type="text" keyboardType="numeric" placeholder="Voltage Low" onBlur={e => setVoltageLow(e.target.value)}/>
@@ -183,7 +183,7 @@ function OpenAlert() {
 
       <FormControl isRequired>
         <Stack mx="4">
-          <Text fontSize="lg" fontWeight="bold">Checking</Text>
+          <Text fontSize="2xl" fontWeight="bold">Checking</Text>
 
           <FormControl.Label  mt="2" >Ligh Indicator</FormControl.Label>
           <Select
