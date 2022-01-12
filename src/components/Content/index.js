@@ -15,12 +15,15 @@ import { faThermometerEmpty } from '@fortawesome/free-solid-svg-icons'
 
 function Content() {
   return (
-    <Box>
+    <Box alignSelf="center"
+    width={375}
+    maxWidth="100%">
     <Center>
     <HStack space={1} my="5" alignItems="center">
       
         <Item title="Indicator Panel"  img={faBolt} url="energy" color="primary.500"/>
-        <Item  title="Indicator AHU"  img={faThermometerEmpty} url="ahu" color="success.500"/>
+        <DisabledItem  title="Indicator AHU"  img={faThermometerEmpty} url="ahu" color="success.500"/>
+        {/* <Item  title="Indicator AHU"  img={faThermometerEmpty} url="ahu" color="success.500"/> */}
 
         
       </HStack>
@@ -36,13 +39,9 @@ function Content() {
 
 function Item(props) {
     return (
-    
-      <Link to={props.url} style={{textDecoration:"none"}}>
-
-<Center>
-  
-        <Center h="40" w="40" mx="1" bg={props.color} rounded="md" shadow={3} >
-            <Box>
+<Box>
+  <Link to={props.url} style={{textDecoration:"none"}}>
+        <Center h="40" w="40" mx="1" bg={props.color}  rounded="md" shadow={3} >
             <FontAwesomeIcon icon={props.img} style={{fontSize:"80px",color:"white"}}/>
 
                 {/* <Image
@@ -50,18 +49,44 @@ function Item(props) {
                 alt="energy"
                 size="xs"
                 /> */}
-            </Box>
         </Center>
-        <Text color="black"  mt="1" >
-        {props.title}
-              </Text>
-    </Center>
+        <Center flex={1} px="3">
+          <Text color="black"  mt="1"  bold style={{fontSize:"15px"}} >{props.title}</Text>
+        </Center>
 
-    </Link>
- 
+      </Link>
+  </Box>
   
     );
   }
+
+
+
+
+function DisabledItem(props) {
+  return (
+<Box>
+<Link to={props.url} style={{textDecoration:"none"}}>
+      <Center h="40" w="40" mx="1" bg={props.color+":alpha.30"} rounded="md" shadow={3} >
+          <FontAwesomeIcon icon={props.img} style={{fontSize:"80px",color:"white"}}/>
+
+              {/* <Image
+              source={props.img}
+              alt="energy"
+              size="xs"
+              /> */}
+      </Center>
+      <Center flex={1} px="3">
+        <Text color="black"  mt="1"  bold style={{fontSize:"15px"}} >{props.title}</Text>
+      </Center>
+
+    </Link>
+</Box>
+
+  );
+}
+
+
 
 
 export default Content;
