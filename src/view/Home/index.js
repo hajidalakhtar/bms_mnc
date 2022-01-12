@@ -3,14 +3,13 @@ import Hero from "../../components/Hero";
 import Content from "../../components/Content";
 import {
   Box,
-
   Divider,
 } from 'native-base';
 
 function Home() {
   return (
     <Box>
-    <Hero title="Udah melakukan pengecekan?" isButton="false"/>
+    <Hero title="Building Management System" isButton="false"/>
     <Divider  bg="trueGray.200" height="1" />
     <Content/>
 

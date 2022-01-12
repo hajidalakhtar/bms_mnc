@@ -1,4 +1,5 @@
 import * as React from 'react';
+import Login from "./view/Login";
 import Home from "./view/Home";
 import Energy from "./view/Energy";
 import AHU from "./view/AHU";
@@ -11,6 +12,7 @@ function App() {
 
     <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
           <Route path="energy" element={<Energy />} />
           <Route path="ahu" element={<AHU />} />
     </Routes>

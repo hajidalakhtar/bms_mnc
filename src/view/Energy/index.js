@@ -57,25 +57,6 @@ function Content() {
   const [desc_room, setRoom] = useState("");
 
 function postData() {
-
-console.log( ampere_low)
-console.log(ampere_mid)
-console.log(ampere_high)
-console.log(voltage_low)
-console.log(voltage_mid)
-console.log(voltage_high)
-console.log(desc_ligh_indicator)
-console.log(desc_measure_indicator)
-console.log(desc_selector_switch)
-console.log(desc_push_buttom)
-console.log(desc_fuse)
-console.log(desc_wiring)
-console.log(desc_cableconnection)
-console.log(desc_control_system)
-console.log(desc_cleaning_body)
-console.log(desc_all_component)
-console.log(desc_panel_painting)
-console.log(desc_room)
   axios.post('https://hris.mncplay.id/property/api/bms/post/indicator/panel', {
     ampere_low : ampere_low,
     ampere_mid : ampere_mid,
@@ -132,7 +113,10 @@ function OpenAlert() {
   }
   
   return (
-    <Box mt="3">
+    <Box mt="3"      
+    alignSelf="center"
+    width={375}
+    maxWidth="100%" >
       
       <FormControl isRequired>
         <Stack mx="4">

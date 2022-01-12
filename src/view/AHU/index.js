@@ -1,5 +1,7 @@
-import * as React from 'react';
+import React, { useState } from 'react';
 import Hero from "../../components/Hero";
+import axios from "axios";
+
 import {
   FormControl,
   Input,
@@ -32,62 +34,75 @@ function AHU() {
 function Content() {
   const MySwal = withReactContent(Swal)
   let navigate = useNavigate();
+ 
+  const [zona_a, setZonaA] = useState("");
+  const [zona_b, setZonaB] = useState("");
+  const [zona_c, setZonaC] = useState("");
+  const [zona_d, setZonaD] = useState("");
 
-  function postData() {
+function postData() {
+  axios.post('https://hris.mncplay.id/property/api/bms/post/indicator/AHU', {
+    zona_a : zona_a,
+    zona_b : zona_b,
+    zona_c : zona_c,
+    zona_d : zona_d,
+  })
+  .then(function (response) {
+    console.log(response)
+    MySwal.fire({
+      icon: 'success',
+      title: 'Data berhasil disimpan',
+      confirmButtonText: 'Kembali'
+
+    }).then(function() {
+      navigate("/")
+  });
+  })
+  .catch(function (error) {
+    console.log(error);
+  });
+}
+
+
+function OpenAlert() {
     let open = false;
     MySwal.fire({
       title: 'Uploading Data',
-      // html: 'I will close in <b></b> milliseconds.',
       didOpen: () => {
         MySwal.showLoading()
-        setInterval(() => {
-          console.log('okee')
-          if (open == false) {
-            MySwal.fire({
-              icon: 'success',
-              title: 'Data berhasil disimpan',
-
-            })
-            setInterval(() => {
-                MySwal.close()
-                navigate('/');
-            }, 1500)
-
-            open = true
-          }
-
-
-        }, 2000)
+        postData()
       },
       willClose: () => {
         console.log("tutup")
       }
     }).then((result) => {
-      /* Read more about handling dismissals below */
       if (result.dismiss === MySwal.DismissReason.timer) {
         console.log('I was closed by the timer')
       }
     })
   }
   
+  
   return (
-    <Box mt="3">
-      
+    <Box mt="3" 
+    alignSelf="center"
+    width={375}
+    maxWidth="100%"
+    >
       <FormControl isRequired>
         <Stack mx="4">
       <Text fontSize="lg" fontWeight="bold">AHU</Text>
-
           <FormControl.Label mt="2" >Zona A</FormControl.Label>
-          <Input type="text" keyboardType="numeric" placeholder="Temperature" />
+          <Input type="text" keyboardType="numeric" placeholder="Temperature"   onBlur={e => setZonaA(e.target.value)}/>
    
           <FormControl.Label mt="3">Zona B</FormControl.Label>
-          <Input type="text" keyboardType="numeric" placeholder="Temperature" />
+          <Input type="text" keyboardType="numeric" placeholder="Temperature"   onBlur={e => setZonaB(e.target.value)}/>
 
           <FormControl.Label mt="3">Zona C</FormControl.Label>
-          <Input type="text" keyboardType="numeric" placeholder="Temperature" />
+          <Input type="text" keyboardType="numeric" placeholder="Temperature"   onBlur={e => setZonaC(e.target.value)}/>
         
           <FormControl.Label mt="3">Zona D</FormControl.Label>
-          <Input type="text" keyboardType="numeric" placeholder="Temperature" />
+          <Input type="text" keyboardType="numeric" placeholder="Temperature"   onBlur={e => setZonaD(e.target.value)}/>
         
           <Button mt="5"  onPress={postData} colorScheme="success">
           Submit
