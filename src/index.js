@@ -3,8 +3,12 @@ import ReactDOM from "react-dom";
 import App from "./App";
 import { NativeBaseProvider, extendTheme } from "native-base";
 import { BrowserRouter } from "react-router-dom";
-
+import store from './redux/store'
+import { Provider } from 'react-redux'
+import { PersistGate } from 'redux-persist/integration/react'
 import reportWebVitals from "./reportWebVitals";
+
+// console.log(configureStore.store)
 
 const theme = extendTheme({
   config: {
@@ -15,9 +19,13 @@ const theme = extendTheme({
 ReactDOM.render(
   <React.StrictMode>
     <NativeBaseProvider theme={theme}>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>,
+      <BrowserRouter>
+        <Provider store={store}>
+        {/* <PersistGate loading={null} persistor={configureStore.persistor}> */}
+          <App />
+        {/* </PersistGate> */}
+        </Provider>
+      </BrowserRouter>,
     </NativeBaseProvider>
   </React.StrictMode>,
   document.getElementById("root")
