@@ -18,14 +18,34 @@ import axios from "axios";
 
 
 function Content() {
-  const [LastIndicator, setLastIndicator] = useState([]);
+  const [LastAHU1, setLastAHU1] = useState(null);
+  const [LastAHU2, setLastAHU2] = useState(null);
+  const [loading, setLoading] = useState(true);
 
+  const SearchIndex = (data, toSearch) => {
+    var results = [];
+    // console.log()
+    var index = data.findIndex(x => x.task_id === toSearch);
+    return index
+  }
 
   useEffect(() => {
-    console.log(moment().format("h"));
     axios.get('https://hris.mncplay.id/property/api/bms/get/last/indicator')
     .then(function (response) {
-      setLastIndicator(response.data)
+      if(SearchIndex(response.data.data,1102) == -1){
+        setLastAHU1(null)
+      }else{
+        setLastAHU1(response.data.data[SearchIndex(response.data.data,1102)].created_at)
+
+      }
+      if(SearchIndex(response.data.data,1120) == -1){
+        setLastAHU2(null)
+      }else{
+        setLastAHU2(moment(response.data.data[SearchIndex(response.data.data,1120)].created_at).format("H:m:s"))
+      }
+      setLoading(false)
+      // console.log(SearchIndex(response.data.data,1120) == -1)
+      // console.log(response.data.data[SearchIndex(response.data.data,1120)])
     })
     .catch(function (error) {
       console.log(error);
@@ -43,13 +63,13 @@ function Content() {
     <HStack space={1} my="5" alignItems="center">
     <Item title="Indicator Panel"  img={faBolt} url="energy" color="primary.500"/>
 
-    {moment().format("h") <= 13 ? 
-    LastIndicator.indicator_ahu_1 != null  
-        ? <DisabledItem  title="Indicator AHU"  img={faThermometerEmpty} url="ahu" color="success.500"/>
+    {moment().format("h") >= 13 ? 
+    LastAHU1 != null 
+        ? <DisabledItem  title="Indicator AHU"  img={faThermometerEmpty} url="ahu" color="success.500" last_attempt={LastAHU1}/>
         : <Item  title="Indicator AHU"  img={faThermometerEmpty} url="ahu" color="success.500"/> 
-        : LastIndicator.indicator_ahu_2 != null  
-        ? <DisabledItem  title="Indicator AHU"  img={faThermometerEmpty} url="ahu" color="success.500"/>
-        : <Item  title="Indicator AHU"  img={faThermometerEmpty} url="ahu" color="success.500"/> }
+        : LastAHU2 != null
+        ? <DisabledItem  title="Indicator AHU"  img={faThermometerEmpty} url="ahu" color="success.500" last_attempt={LastAHU2}/>
+        : <Item  title="Indicator AHU"  img={faThermometerEmpty} url="ahu" color="success.500"  /> }
 
       </HStack>
     
@@ -108,7 +128,7 @@ function DisabledItem(props) {
               /> */}
       </Center>
       <Center flex={1} px="3">
-        <Text color="black"  mt="1"  bold style={{fontSize:"15px"}} >Last Attend 12:00</Text>
+        <Text color="black"  mt="1"  bold style={{fontSize:"15px"}} >Last Attempt {props.last_attempt}</Text>
       </Center>
 
 </Box>

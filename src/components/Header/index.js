@@ -21,27 +21,19 @@ function Header(props) {
         <HStack justifyContent="space-between">
           <Box justifyContent="space-between">
           <Image
-      size={5}
+      size={6}
       resizeMode={"contain"}
       borderRadius={100}
       source={{
-        uri: "https://wallpaperaccess.com/full/317501.jpg",
+        uri: "http://cdn.onlinewebfonts.com/svg/img_264570.png",
       }}
       alt="Alternate Text"
     />
           </Box>
           <Box>
-           <Text> Hi, {props.name}</Text>
+           <Text fontSize="md"> Hi, {props.name}</Text>
           </Box>
-          {/* <Image
-            source={{
-              uri: 'https://media.vanityfair.com/photos/5ba12e6d42b9d16f4545aa19/3:2/w_1998,h_1332,c_limit/t-Avatar-The-Last-Airbender-Live-Action.jpg',
-            }}
-            alt="Aang flying and surrounded by clouds"
-            height="100"
-            rounded="full"
-            width="100"
-          /> */}
+         
         </HStack>
       </Box>
     </Box>
