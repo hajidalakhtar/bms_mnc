@@ -78,12 +78,12 @@ function Login() {
          <VStack space={3} mt="5">
         <FormControl isInvalid={'username' in errors}>
           <FormControl.Label>Email</FormControl.Label>
-          <Input  onBlur={e => setEmail(e.target.value)}/>
+          <Input  onChange={e => setEmail(e.target.value)}/>
         <FormControl.ErrorMessage _text={{fontSize: 'xs', color: 'error.500', fontWeight: 500}}>Username tidak di temukan</FormControl.ErrorMessage>
         </FormControl>
         <FormControl isInvalid={'password' in errors}>
           <FormControl.Label>Password</FormControl.Label>
-          <Input type="password" onBlur={e => setPassword(e.target.value)}/>
+          <Input type="password" onChange={e => setPassword(e.target.value)}/>
           <FormControl.ErrorMessage _text={{fontSize: 'xs', color: 'error.500', fontWeight: 500}}>Password anda salah</FormControl.ErrorMessage>
 
         </FormControl>
