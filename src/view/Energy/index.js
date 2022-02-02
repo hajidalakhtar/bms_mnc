@@ -178,8 +178,8 @@ function OpenAlert() {
             setLighIndicator(itemValue)
           }}
         >
-          <Select.Item label="Hidup / Berfungsi" value="ux" />
-          <Select.Item label="Mati / Tidak Berfungsi" value="web" />
+          <Select.Item label="Hidup / Berfungsi" value="Berfungsi" />
+          <Select.Item label="Mati / Tidak Berfungsi" value="Tidak Berfungsi" />
         </Select>
 
           <FormControl.Label mt="3">Measure Indicator</FormControl.Label>
@@ -191,8 +191,8 @@ function OpenAlert() {
             setMeasureIndicator(itemValue)
           }}
         >
-          <Select.Item label="Hidup / Berfungsi" value="ux" />
-          <Select.Item label="Mati / Tidak Berfungsi" value="web" />
+          <Select.Item label="Hidup / Berfungsi" value="Berfungsi" />
+          <Select.Item label="Mati / Tidak Berfungsi" value="Tidak Berfungsi" />
         </Select>
 
           <FormControl.Label mt="3">Selector Switch	</FormControl.Label>
@@ -204,8 +204,8 @@ function OpenAlert() {
             setSelectorSwitch(itemValue)
           }}
         >
-          <Select.Item label="Berfungsi" value="ux" />
-          <Select.Item label="Tidak Berfungsi" value="web" />
+          <Select.Item label="Berfungsi" value="Berfungsi" />
+          <Select.Item label="Tidak Berfungsi" value="Tidak Berfungsi" />
         </Select>
 
           <FormControl.Label mt="3">Push Buttom	</FormControl.Label>
@@ -217,8 +217,8 @@ function OpenAlert() {
             setPushButtom(itemValue)
           }}
         >
-          <Select.Item label="Berfungsi" value="ux" />
-          <Select.Item label="Tidak Berfungsi" value="web" />
+          <Select.Item label="Berfungsi" value="Berfungsi" />
+          <Select.Item label="Tidak Berfungsi" value="Tidak Berfungsi" />
         </Select>
           
           <FormControl.Label mt="3">Fuse	</FormControl.Label>
@@ -230,8 +230,8 @@ function OpenAlert() {
             setFuse(itemValue)
           }}
         >
-          <Select.Item label="Berfungsi" value="ux" />
-          <Select.Item label="Tidak Berfungsi" value="web" />
+          <Select.Item label="Berfungsi" value="Berfungsi" />
+          <Select.Item label="Tidak Berfungsi" value="Tidak Berfungsi" />
         </Select>
           
           <FormControl.Label mt="3">Wiring	</FormControl.Label>
@@ -243,8 +243,8 @@ function OpenAlert() {
             setWiring(itemValue)
           }}
         >
-          <Select.Item label="Ada" value="ux" />
-          <Select.Item label="Tidak Ada" value="web" />
+          <Select.Item label="Ada" value="Ada" />
+          <Select.Item label="Tidak Ada" value="Tidak Ada" />
         </Select>
           
           <FormControl.Label mt="3">Cable Connection	</FormControl.Label>
@@ -256,8 +256,8 @@ function OpenAlert() {
             setCableconnection(itemValue)
           }}
         >
-          <Select.Item label="Terkoneksi" value="ux" />
-          <Select.Item label="Tidak Terkoneksi" value="web" />
+          <Select.Item label="Terkoneksi" value="Terkoneksi" />
+          <Select.Item label="Tidak Terkoneksi" value="Tidak Terkoneksi" />
         </Select>
           
           <FormControl.Label mt="3">Control System	</FormControl.Label>
@@ -269,8 +269,8 @@ function OpenAlert() {
             setControlSystem(itemValue)
           }}
         >
-          <Select.Item label="Terkoneksi" value="ux" />
-          <Select.Item label="Tidak Terkoneksi" value="web" />
+          <Select.Item label="Terkoneksi" value="Terkoneksi" />
+          <Select.Item label="Tidak Terkoneksi" value="Tidak Terkoneksi" />
         </Select>
 
           
@@ -283,8 +283,8 @@ function OpenAlert() {
             setCleaningBody(itemValue)
           }}
         >
-          <Select.Item label="Bersih" value="ux" />
-          <Select.Item label="Tidak Bersih" value="web" />
+          <Select.Item label="Bersih" value="Bersih" />
+          <Select.Item label="Tidak Bersih" value="Tidak Bersih" />
         </Select>
 
           
@@ -297,8 +297,8 @@ function OpenAlert() {
             setAllComponent(itemValue)
           }}
         >
-          <Select.Item label="Terkoneksi" value="ux" />
-          <Select.Item label="Tidak Terkoneksi" value="web" />
+          <Select.Item label="Terkoneksi" value="Terkoneksi" />
+          <Select.Item label="Tidak Terkoneksi" value="Tidak Terkoneksi" />
         </Select>
 
           <FormControl.Label mt="3">Panel Painting	</FormControl.Label>
@@ -310,8 +310,8 @@ function OpenAlert() {
             setPanelPainting(itemValue)
           }}
         >
-          <Select.Item label="Bersih" value="ux" />
-          <Select.Item label="Tidak Bersih" value="web" />
+          <Select.Item label="Bersih" value="Bersih" />
+          <Select.Item label="Tidak Bersih" value="Tidak Bersih" />
         </Select>
 
           <FormControl.Label mt="3">Area / Room	</FormControl.Label>
@@ -323,8 +323,8 @@ function OpenAlert() {
             setRoom(itemValue)
           }}
         >
-        <Select.Item label="Bersih" value="ux" />
-          <Select.Item label="Tidak Bersih" value="web" />
+        <Select.Item label="Bersih" value="Bersih" />
+          <Select.Item label="Tidak Bersih" value="Tidak Bersih" />
         </Select>
 
         <Button mt="5"  onPress={OpenAlert} colorScheme="success">

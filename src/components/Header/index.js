@@ -10,6 +10,9 @@ import {
 
 } from 'native-base';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+// import { faUser } from '@fortawesome/free-solid-svg-icons'
+{/* <i class="far "></i> */}
 function Header(props) {
   return (
     <Box m="3">
@@ -29,6 +32,8 @@ function Header(props) {
       }}
       alt="Alternate Text"
     />
+                    {/* <FontAwesomeIcon icon={faFaceRelieved} /> */}
+
           </Box>
           <Box>
            <Text fontSize="md"> Hi, {props.name}</Text>
