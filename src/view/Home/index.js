@@ -17,13 +17,13 @@ function Home() {
   const auth = useSelector(selectCount)
   // console.log()
   useEffect(() => {
-    if(auth.username == null){
-      navigate("/login")
-    }
+    // if(auth.username == null){
+    //   navigate("/login")
+    // }
   });
   return (
     <Box>
-      <Header name={auth.username}/>
+      <Header name="BMS Admin"/>
     <Hero title="Building Management System" isButton="false"/>
     <Divider  bg="trueGray.200" height="1" />
     <Content/>
