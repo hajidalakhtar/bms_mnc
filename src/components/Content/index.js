@@ -155,7 +155,7 @@ function TransparentItem(props) {
 function DisabledItem(props) {
   return (
 <Box>
-      <Center size="lg" mx="2" bg={props.color+":alpha.30"} rounded="md" shadow={3} >
+      <Center size="lg" mx="2" bg={props.color+":alpha.30"} rounded="md" shadow={3} cd >
           <FontAwesomeIcon icon={props.img} style={{fontSize:"40px",color:"white"}}/>
       </Center>
       <Center flex={1} px="3">

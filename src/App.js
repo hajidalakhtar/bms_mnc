@@ -7,6 +7,7 @@ import TigaBulan from "./view/TigaBulan";
 import DuaMinggu from "./view/DuaMinggu";
 import SatuBulan from "./view/SatuBulan";
 import Apar from "./view/Apar";
+import PAM from "./view/PAM";
 
 import Energy from "./view/Energy";
 import AHU from "./view/AHU";
@@ -28,6 +29,7 @@ function App() {
           <Route path="/2/minggu" element={<DuaMinggu />} />
           <Route path="/2/minggu" element={<DuaMinggu />} />
           <Route path="/apar" element={<Apar />} />
+          <Route path="/pam" element={<PAM />} />
           
           <Route path="ahu" element={<AHU />} />
           <Route path="ac" element={<AC />} />
