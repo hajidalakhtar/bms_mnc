@@ -52,7 +52,8 @@ function Login() {
       if(response.data.status == 200){
         // console.log(response.data.data)
         dispatch(saveAccountData(response.data.data))
-        navigate("/")
+             window.location.href = 'https://bms-mnc.vercel.app/'; 
+      return null;
       }else{
         validate(response);
       }

@@ -80,7 +80,8 @@ function postData() {
       confirmButtonText: 'Kembali'
 
     }).then(function() {
-      navigate("/")
+           window.location.href = 'https://bms-mnc.vercel.app/'; 
+      return null;
   });
   })
   .catch(function (error) {
