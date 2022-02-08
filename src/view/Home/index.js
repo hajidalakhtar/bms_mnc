@@ -13,17 +13,14 @@ import { useNavigate } from "react-router-dom";
 
 function Home() {
   let navigate = useNavigate();
-
   const auth = useSelector(selectCount)
-  // console.log()
   useEffect(() => {
-    // if(auth.username == null){
-    //   navigate("/login")
-    // }
+
+
   });
   return (
     <Box>
-      <Header name="BMS Admin"/>
+    <Header name="BMS Admin"/>
     <Hero title="Building Management System" isButton="false"/>
     <Divider  bg="trueGray.200" height="1" />
     <Content/>
