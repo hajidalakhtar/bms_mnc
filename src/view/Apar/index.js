@@ -23,7 +23,7 @@ const MySwal = withReactContent(Swal)
 function Apar() {
   return (
     <Box>
-    <Hero title="Kebersihan"/>
+    <Hero title="Indicator Apar"/>
     <Divider  bg="trueGray.200" height="1"  />
     <Content />
     </Box>

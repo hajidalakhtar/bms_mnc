@@ -23,7 +23,7 @@ const MySwal = withReactContent(Swal)
 function AC() {
   return (
     <Box>
-    <Hero title="Kebersihan"/>
+    <Hero title="Kebersihan Dua Bulan"/>
     <Divider  bg="trueGray.200" height="1"  />
     <Content />
     </Box>

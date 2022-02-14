@@ -23,7 +23,7 @@ const MySwal = withReactContent(Swal)
 function AC() {
   return (
     <Box>
-    <Hero title="Kebersihan"/>
+    <Hero title="Indicator Kebebersihan 2 Minggu"/>
     <Divider  bg="trueGray.200" height="1"  />
     <Content />
     </Box>
@@ -35,7 +35,6 @@ function AC() {
 function Content() {
   const MySwal = withReactContent(Swal)
   let navigate = useNavigate();
-
 
   const [workstation, setWorkstation] = useState("");
   const [id1118, set1118] = useState("");
