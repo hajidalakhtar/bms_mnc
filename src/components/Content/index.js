@@ -79,7 +79,7 @@ function Content() {
         ? <DisabledItem  title="Indicator AHU"  img={faThermometerEmpty} url="ahu" color="success.500" last_attempt={LastAHU1}/>
         : <Item  title="Indicator AHU"  img={faThermometerEmpty} url="ahu" color="success.500"  /> }
 
-      <Item title="Indicator PAM"  img={faTint} url="energy" color="primary.500"/>
+      <Item title="Indicator PAM"  img={faTint} url="pam" color="primary.500"/>
 
       </HStack>
  
@@ -93,7 +93,7 @@ function Content() {
         <HStack space={1} mt="5"   alignItems="center">
         <Item title="2 minggu"  img={faBolt} url="/2/minggu" color="warning.500"/>
     
-        </HStack>
+      </HStack>
       
       
     </Center>
