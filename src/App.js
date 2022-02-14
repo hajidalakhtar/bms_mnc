@@ -11,6 +11,7 @@ import PAM from "./view/PAM";
 
 import Energy from "./view/Energy";
 import AHU from "./view/AHU";
+import Requester from "./view/Requester";
 import AC from "./view/AC";
 import { Routes, Route } from "react-router-dom";
 
@@ -30,6 +31,8 @@ function App() {
           <Route path="/2/minggu" element={<DuaMinggu />} />
           <Route path="/apar" element={<Apar />} />
           <Route path="/pam" element={<PAM />} />
+          <Route path="/requester" element={<Requester />} />
+          
           
           <Route path="ahu" element={<AHU />} />
           <Route path="ac" element={<AC />} />
