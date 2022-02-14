@@ -55,15 +55,8 @@ function postData() {
   })
   .then(function (response) {
     console.log(response)
-    MySwal.fire({
-      icon: 'success',
-      title: 'Data berhasil disimpan',
-      confirmButtonText: 'Kembali'
-
-    }).then(function() {
-           window.location.href = 'https://bms-mnc.vercel.app/'; 
+       window.location.href = 'https://bms-mnc.vercel.app/'; 
       return null;
-  });
   })
   .catch(function (error) {
     console.log(error);
