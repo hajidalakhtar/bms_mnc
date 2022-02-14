@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Hero from "../../components/Hero";
 import axios from "axios";
+import { useParams } from 'react-router-dom';
 
 import {
   FormControl,
@@ -34,14 +35,29 @@ function AC() {
 function Content() {
   const MySwal = withReactContent(Swal)
   let navigate = useNavigate();
-  const [meteran, setMeteran] = useState("");
+  const [area, setArea] = useState("");
+  const [form_request_category, setFormRequestCategory] = useState([]);
+  const [request_category, setRequestCategory] = useState("");
+  const [request_data, setRequestData] = useState("");
+  const params = useParams()
 
-  
-  
+
+  useEffect(() => {
+  axios.get('https://hris.mncplay.id/property/api/bms/get/request/category')
+  .then(function (response) {
+    setFormRequestCategory(response.data.data)
+  })
+
+
+
+  },[]);
 
 function postData() {
-  axios.post('https://hris.mncplay.id/property/api/bms/post/pam', {
-    meteran:meteran,
+  axios.post('https://hris.mncplay.id/property/api/bms/post/request', {
+    user_id:params.user_id,
+    area:area,
+    request_category:request_category,
+    request_data:request_data
   })
   .then(function (response) {
     console.log(response)
@@ -59,6 +75,11 @@ function postData() {
     console.log(error);
   });
 }
+
+
+
+
+
 
 
 function OpenAlert() {
@@ -88,20 +109,49 @@ function OpenAlert() {
     >
       <FormControl isRequired>
         <Stack mx="4">
-      {/* <Text fontSize="lg" fontWeight="bold">Requester</Text> */}
-          <FormControl.Label mt="2" >Meteran</FormControl.Label>
-          <Input type="text" keyboardType="numeric" placeholder="Meteran"   onBlur={e => setMeteran(e.target.value)}/>
+
+          <FormControl.Label mt="2" >Area</FormControl.Label>
+          <Input type="text" keyboardType="numeric" placeholder="Location"   onBlur={e => setArea(e.target.value)}/>
+{/*         
+          <FormControl.Label mt="2" >Category</FormControl.Label>
+          <Input type="text" keyboardType="numeric" placeholder="Location"   onBlur={e => setRequestCategory(e.target.value)}/>
+         */}
+
+
+  <FormControl.Label mt="3">Category</FormControl.Label>
+                  <Select
+            minWidth="200"
+            placeholder="Category"
+            mt="1"
+              onValueChange={(itemValue) => {
+                      setRequestCategory(itemValue)
+            }}
+          >
+          {form_request_category.map((item, i) => {     
+           return (<Select.Item label={item.category_name} value={item.category_name} />) 
+        })}
+           
+            {/* <Select.Item label="Tidak Bersih" value="Tidak Bersih" /> */}
+         
+         
+          </Select>
+
+          <FormControl.Label mt="2" >Request</FormControl.Label>
+          <Input type="text" keyboardType="numeric" placeholder="Location"   onBlur={e => setRequestData(e.target.value)}/>
    
-        
           <Button mt="5"  onPress={postData} colorScheme="success">
           Submit
         </Button>
-  
         </Stack>
       </FormControl>
   
   
-  
+      {/* user_id:3171 */}
+
+
+
+
+
     </Box>
   );
 }

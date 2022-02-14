@@ -31,7 +31,7 @@ function App() {
           <Route path="/2/minggu" element={<DuaMinggu />} />
           <Route path="/apar" element={<Apar />} />
           <Route path="/pam" element={<PAM />} />
-          <Route path="/requester" element={<Requester />} />
+          <Route path="/requester/:user_id" element={ <Requester />}/>  
           
           
           <Route path="ahu" element={<AHU />} />
