@@ -322,7 +322,7 @@ function OpenAlert() {
           <Select.Item label="Tidak Bersih" value="Tidak Bersih" />
         </Select>
 
-        <Button mt="5"  onPress={OpenAlert} colorScheme="success">
+        <Button mt="5" mb="5" onPress={OpenAlert} colorScheme="success">
           Submit
         </Button>
         </Stack>

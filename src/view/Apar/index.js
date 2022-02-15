@@ -205,7 +205,7 @@ function OpenAlert() {
 
 
 
-        <Button mt="5"  onPress={postData} colorScheme="success">
+        <Button mt="5" mb="5"  onPress={postData} colorScheme="success">
           Submit
         </Button>
   

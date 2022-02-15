@@ -86,7 +86,7 @@ function OpenAlert() {
           <Input type="text" keyboardType="numeric" placeholder="Meteran"   onBlur={e => setMeteran(e.target.value)}/>
    
         
-          <Button mt="5"  onPress={postData} colorScheme="success">
+          <Button mt="5" mb="5" onPress={postData} colorScheme="success">
           Submit
         </Button>
   

@@ -132,7 +132,7 @@ function OpenAlert() {
           <FormControl.Label mt="2" >Request</FormControl.Label>
           <Input type="text" keyboardType="numeric" placeholder="Location"   onBlur={e => setRequestData(e.target.value)}/>
    
-          <Button mt="5"  onPress={postData} colorScheme="success">
+          <Button mt="5" mb="5" onPress={postData} colorScheme="success">
           Submit
         </Button>
         </Stack>
