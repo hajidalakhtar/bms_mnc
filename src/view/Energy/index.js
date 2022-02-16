@@ -84,7 +84,7 @@ function postData() {
   })
   .catch(function (error) {
     console.log(error);
-    console.log('Error', error.message);
+    console.log('Errorasdasdasdasd', error.response.data);
   });
 }
 
@@ -131,7 +131,6 @@ function OpenAlert() {
 
       <Box my="4"></Box>
       {/* <Divider  bg="trueGray.200" height="1" my="4" /> */}
-
       <FormControl isRequired>
         <Stack mx="4">
           <Text fontSize="2xl" fontWeight="bold">Voltage</Text>
@@ -146,20 +145,7 @@ function OpenAlert() {
           <Input type="text" keyboardType="numeric" placeholder="Voltage High" onBlur={e => setVoltageHigh(e.target.value)}/>
         </Stack>
       </FormControl>
-  
       <Box my="4"></Box>
-      
-
-
-
-
-
-
-
-
-
-
-
       <FormControl isRequired>
         <Stack mx="4">
           <Text fontSize="2xl" fontWeight="bold">Checking</Text>
@@ -190,7 +176,7 @@ function OpenAlert() {
           <Select.Item label="Mati / Tidak Berfungsi" value="Tidak Berfungsi" />
         </Select>
 
-          <FormControl.Label mt="3">Selector Switch	</FormControl.Label>
+          <FormControl.Label mt="3">Selector Switch</FormControl.Label>
                <Select
           minWidth="200"
           placeholder="Keterangan"
@@ -327,9 +313,6 @@ function OpenAlert() {
         </Button>
         </Stack>
       </FormControl>
-
-  
-  
     </Box>
   );
 }

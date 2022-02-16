@@ -66,8 +66,10 @@ function OpenAlert() {
     MySwal.fire({
       title: 'Uploading Data',
       didOpen: () => {
-        MySwal.showLoading()
-        postData()
+       MySwal.showLoading()
+setTimeout(function() {
+  postData()
+}, 1000);
       },
       willClose: () => {
         console.log("tutup")
@@ -135,10 +137,7 @@ function OpenAlert() {
         </Button>
         </Stack>
   
-      </FormControl>
-  
-  
-  
+      </FormControl>  
     </Box>
   );
 }

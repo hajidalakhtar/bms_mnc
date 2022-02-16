@@ -70,7 +70,10 @@ function OpenAlert() {
       title: 'Uploading Data',
       didOpen: () => {
         MySwal.showLoading()
-        postData()
+        setTimeout(function() {
+          postData()
+        }, 1000);
+        
       },
       willClose: () => {
         console.log("tutup")
@@ -110,7 +113,7 @@ function OpenAlert() {
           <FormControl.Label mt="3">Reasons</FormControl.Label>
           <Input type="text" keyboardType="numeric" placeholder="Reasons"   onBlur={e => setReasons(e.target.value)}/>
         
-          <Button mt="5"  onPress={postData} colorScheme="success">
+          <Button mt="5" mb="5"  onPress={postData} colorScheme="success">
           Submit
         </Button>
   

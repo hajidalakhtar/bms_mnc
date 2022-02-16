@@ -63,8 +63,10 @@ function OpenAlert() {
     MySwal.fire({
       title: 'Uploading Data',
       didOpen: () => {
-        MySwal.showLoading()
-        postData()
+       MySwal.showLoading()
+setTimeout(function() {
+  postData()
+}, 1000);
       },
       willClose: () => {
         console.log("tutup")
@@ -98,7 +100,7 @@ function OpenAlert() {
           <FormControl.Label mt="3">Zona D</FormControl.Label>
           <Input type="text" keyboardType="numeric" placeholder="Temperature"   onBlur={e => setZonaD(e.target.value)}/>
         
-          <Button mt="5"  onPress={postData} colorScheme="success">
+          <Button mt="5"  mb="5" onPress={postData} colorScheme="success">
           Submit
         </Button>
   

@@ -73,7 +73,7 @@ function postData() {
  
   })
   .then(function (response) {
-    console.log(response)
+
        window.location.href = 'https://bms-mnc.vercel.app/'; 
       return null;
   })
@@ -88,8 +88,10 @@ function OpenAlert() {
     MySwal.fire({
       title: 'Uploading Data',
       didOpen: () => {
-        MySwal.showLoading()
-        postData()
+       MySwal.showLoading()
+setTimeout(function() {
+  postData()
+}, 1000);
       },
       willClose: () => {
         console.log("tutup")
