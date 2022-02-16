@@ -64,9 +64,9 @@ function OpenAlert() {
       title: 'Uploading Data',
       didOpen: () => {
        MySwal.showLoading()
-setTimeout(function() {
-  postData()
-}, 1000);
+        setTimeout(function() {
+          postData()
+        }, 1000);
       },
       willClose: () => {
         console.log("tutup")
@@ -102,7 +102,7 @@ setTimeout(function() {
         </Select>
 
 
-        <Button mt="5" mb="5"  onPress={postData} colorScheme="success">
+        <Button mt="5" mb="5"  onPress={OpenAlert} colorScheme="success">
           Submit
         </Button>
   

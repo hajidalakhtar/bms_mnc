@@ -132,7 +132,7 @@ setTimeout(function() {
         </Select>
 
 
-        <Button mt="5" mb="5"  onPress={postData} colorScheme="success">
+        <Button mt="5" mb="5"  onPress={OpenAlert} colorScheme="success">
           Submit
         </Button>
         </Stack>
