@@ -81,9 +81,9 @@ function OpenAlert() {
       title: 'Uploading Data',
       didOpen: () => {
        MySwal.showLoading()
-setTimeout(function() {
-  postData()
-}, 1000);
+        setTimeout(function() {
+          postData()
+        }, 1000);
       },
       willClose: () => {
         console.log("tutup")
@@ -106,7 +106,7 @@ setTimeout(function() {
         <Stack mx="4">
 
           <FormControl.Label mt="2" >Area</FormControl.Label>
-          <Input type="text" keyboardType="numeric" placeholder="Location"   onBlur={e => setArea(e.target.value)}/>
+          <Input type="text" keyboardType="text" placeholder="Location"   onBlur={e => setArea(e.target.value)}/>
 {/*         
           <FormControl.Label mt="2" >Category</FormControl.Label>
           <Input type="text" keyboardType="numeric" placeholder="Location"   onBlur={e => setRequestCategory(e.target.value)}/>
@@ -132,9 +132,9 @@ setTimeout(function() {
           </Select>
 
           <FormControl.Label mt="2" >Request</FormControl.Label>
-          <Input type="text" keyboardType="numeric" placeholder="Location"   onBlur={e => setRequestData(e.target.value)}/>
+          <Input type="text" keyboardType="text" placeholder="Location"   onBlur={e => setRequestData(e.target.value)}/>
    
-          <Button mt="5" mb="5" onPress={postData} colorScheme="success">
+          <Button mt="5" mb="5" onPress={OpenAlert} colorScheme="success">
           Submit
         </Button>
         </Stack>
