@@ -123,7 +123,7 @@ setTimeout(function() {
             }}
           >
           {form_request_category.map((item, i) => {     
-           return (<Select.Item label={item.category_name} value={item.category_name} />) 
+           return (<Select.Item label={item.category_id} value={item.category_name} />) 
         })}
            
             {/* <Select.Item label="Tidak Bersih" value="Tidak Bersih" /> */}
