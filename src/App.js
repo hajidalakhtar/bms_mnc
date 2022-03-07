@@ -5,6 +5,7 @@ import KebersihanEnamBulan from "./view/KebersihanEnamBulan";
 import KebersihanDuaBulan from "./view/KebersihanDuaBulan";
 import TigaBulan from "./view/TigaBulan";
 import DuaMinggu from "./view/DuaMinggu";
+import PenangananMasalah from "./view/PenangananMasalah";
 import SatuBulan from "./view/SatuBulan";
 import Apar from "./view/Apar";
 import PAM from "./view/PAM";
@@ -28,7 +29,7 @@ function App() {
           <Route path="/kebersihan/2/bulan" element={<KebersihanDuaBulan />} />
           <Route path="/3/bulan" element={<TigaBulan />} />
           <Route path="/2/minggu" element={<DuaMinggu />} />
-          <Route path="/2/minggu" element={<DuaMinggu />} />
+          <Route path="/penanganan/masalah" element={<PenangananMasalah />} />
           <Route path="/apar" element={<Apar />} />
           <Route path="/pam" element={<PAM />} />
           <Route path="/requester/:user_id" element={ <Requester />}/>  
